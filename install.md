@@ -25,7 +25,7 @@ flask
     },
     "pterodactyl": {
         "url": "http://yourpterodactyl.url/",  //pterodactyl面板網址
-        "key": "" //pterodactyl面板kpi key
+        "key": "" //pterodactyl面板api key
     },
     "boardmate": {
         "host": "0.0.0.0", //boardmate運行位置

@@ -206,10 +206,11 @@ class Ptero:
         async with aiohttp.ClientSession(headers=headers) as session:
             async with session.post(f'{self.base_url}api/application/servers', data=json.dumps(data)) as response:
                 data = await response.json()
-        tmp_data = await self.ptero.get_servers()
-        tmp_data += data,
-        with open("data/server_tmp.cache", "w", encoding="utf-8") as f:
-            json.dump(tmp_data, f, indent=4)
+        if "errors" not in data:
+            tmp_data = await self.get_servers()
+            tmp_data += data,
+            with open("data/server_tmp.cache", "w", encoding="utf-8") as f:
+                json.dump(tmp_data, f, indent=4)
         return data
 
     async def delete_server(self, server_identifier):
