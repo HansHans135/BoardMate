@@ -6,7 +6,7 @@ import discord
 
 class Discord_User:
     def __init__(self, data):
-        self.username = data["global_name"] or data["username"]
+        self.username = data.get("global_name") or data["username"]
         self.avatar_url = f'https://cdn.discordapp.com/avatars/{data["id"]}/{data["avatar"]}'
         self.id = data["id"]
         self.email = data["email"]

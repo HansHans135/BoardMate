@@ -110,6 +110,8 @@ async def index_server_add():
             server_node=server_node,
             server_egg=server_egg
         )
+        if "errors" in server:
+            return server
         await dc.notifly(title="創建伺服器",description=f"用戶：{current_user.username} ({current_user.id})\n> Name：{server_name}\n> CPU：{server_cpu}\n> Memory：{server_memory}\n> Disk{server_disk}\n> Node：{server_node}\n> Type：{server_egg}",img=current_user.avatar_url)
         return redirect("/")
     return render_template("add.html", user=current_user, eggs=SETTING["server"]["eggs"], nodes=SETTING["server"]["node"])

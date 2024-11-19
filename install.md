@@ -25,12 +25,13 @@ flask
     },
     "pterodactyl": {
         "url": "http://yourpterodactyl.url/",  //pterodactyl面板網址
-        "key": "" //pterodactyl面板kpi key
+        "key": "" //pterodactyl面板api key
     },
     "boardmate": {
         "host": "0.0.0.0", //boardmate運行位置
         "port": 3000,//boardmate運行端口
         "debug":false,
+        "account_sharing":false,//允許分帳
         "recache":true,
         "admins":["851062442330816522"] //管理員Discord User ID
     },
